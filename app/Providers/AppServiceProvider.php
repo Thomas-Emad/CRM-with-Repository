@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Http\Repositories\{StatusRepository, SourceRepository};
+use App\Repositories\{StatusRepository, SourceRepository};
 use App\Interfaces\{StatusRepositoryInterface, SourceRepositoryInterface};
 use Illuminate\Support\ServiceProvider;
 
