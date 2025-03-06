@@ -71,11 +71,9 @@ class StatusRepository implements StatusRepositoryInterface
     }
 
     /**
-     * Get the validation rules for the status attributes.
+     * The validation rules for the group.
      *
-     * @return array The validation rules for the status attributes.
-     *               - 'name': Required string with a minimum length of 3 characters.
-     *               - 'color': Required string matching a hexadecimal color code pattern.
+     * @return array<string, string>
      */
     public function rules(): array
     {

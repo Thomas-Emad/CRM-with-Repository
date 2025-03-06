@@ -1,15 +1,11 @@
 <?php
 
-use App\Http\Controllers\SourceController;
-use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\DashboardPage;
-use App\Livewire\Status\{StatusPage, StatusOperation};
-use App\Livewire\Source\{SourcePage, SourceOperation};
-use App\Livewire\Group\{GroupPage, GroupOperation};
 use App\Livewire\Lead\{LeadPage, LeadOperation, ShowLead};
 use App\Livewire\Lead\Interactive\InteractiveOperation;
 use App\Livewire\Customer\{CustomerPage, CustomerOperations, ShowCustomer};
+use App\Http\Controllers\{StatusController, SourceController, GroupController};
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -28,10 +24,10 @@ Route::group(['middleware' => 'auth'], function () {
     // });
 
     // Group
-    Route::group(['as' => 'group.', 'prefix' => 'groups'], function () {
-        Route::get('/', GroupPage::class)->name('index');
-        Route::get('/{type}/{id?}', GroupOperation::class)->name('operation');
-    });
+    // Route::group(['as' => 'group.', 'prefix' => 'groups'], function () {
+    //     Route::get('/', GroupPage::class)->name('index');
+    //     Route::get('/{type}/{id?}', GroupOperation::class)->name('operation');
+    // });
 
     // Leads
     Route::group(['as' => 'lead.', 'prefix' => 'leads'], function () {
@@ -57,6 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('statuses', StatusController::class)->only(['index', 'create', 'edit']);
     Route::resource('sources', SourceController::class)->only(['index', 'create', 'edit']);
+    Route::resource('groups', GroupController::class)->only(['index', 'create', 'edit']);
 });
 
 

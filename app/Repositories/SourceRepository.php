@@ -70,14 +70,10 @@ class SourceRepository implements SourceRepositoryInterface
         return  $source->delete();
     }
 
-
     /**
-     * Get the validation rules for the source attributes.
+     * The validation rules for the group.
      *
-     * @return array The validation rules for the source attributes.
-     *               - 'name': Required string with a minimum length of 3 characters.
-     *               - 'website': Optional string that must be a valid URL.
-     *               - 'description': Optional string with a maximum length of 2000 characters.
+     * @return array<string, string>
      */
     public function rules(): array
     {

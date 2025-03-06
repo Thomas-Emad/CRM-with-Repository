@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\{StatusRepository, SourceRepository};
-use App\Interfaces\{StatusRepositoryInterface, SourceRepositoryInterface};
+use App\Repositories\{StatusRepository, SourceRepository, GroupRepository};
+use App\Interfaces\{StatusRepositoryInterface, SourceRepositoryInterface, GroupRepositoryInterface};
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(StatusRepositoryInterface::class, StatusRepository::class);
         $this->app->bind(SourceRepositoryInterface::class, SourceRepository::class);
+        $this->app->bind(GroupRepositoryInterface::class, GroupRepository::class);
     }
 
     /**

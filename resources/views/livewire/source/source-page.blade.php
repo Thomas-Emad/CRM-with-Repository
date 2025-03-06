@@ -76,9 +76,9 @@
                 </tbody>
             </table>
 
-            <div class="p-2">
+            {{-- <div class="p-2">
                 {{ $sources->links() }}
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -99,8 +99,8 @@
                 <div class="modal-body">
                     <div>
                         <label for="Source-name" class="form-label">Name Source</label>
-                        <input type="text" id="Source-title" class="form-control disabled"
-                            wire:model="sourceForm.name" disabled placeholder="Enter Source Name">
+                        <input type="text" id="Source-title" class="form-control disabled" wire:model="name" disabled
+                            placeholder="Enter Source Name">
                     </div>
 
                 </div>
