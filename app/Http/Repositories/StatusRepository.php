@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Repositories;
+namespace App\Http\Repositories;
 
 use App\Models\Status;
 use App\Interfaces\StatusRepositoryInterface;
@@ -81,7 +81,8 @@ class StatusRepository implements StatusRepositoryInterface
     {
         return [
             'name' => 'required|string|min:3',
-            'color' => 'required|string|regex:/^#[0-9A-Fa-f]{6}$/',
+            'website' => 'required|string|url',
+            'description' => 'nullable|string|max:2000',
         ];
     }
 }

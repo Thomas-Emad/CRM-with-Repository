@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SourceController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\DashboardPage;
@@ -21,10 +22,10 @@ Route::group(['middleware' => 'auth'], function () {
     // });
 
     // Source
-    Route::group(['as' => 'source.', 'prefix' => 'sources'], function () {
-        Route::get('/', SourcePage::class)->name('index');
-        Route::get('/{type}/{id?}', SourceOperation::class)->name('operation');
-    });
+    // Route::group(['as' => 'source.', 'prefix' => 'sources'], function () {
+    //     Route::get('/', SourcePage::class)->name('index');
+    //     Route::get('/{type}/{id?}', SourceOperation::class)->name('operation');
+    // });
 
     // Group
     Route::group(['as' => 'group.', 'prefix' => 'groups'], function () {
@@ -55,6 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/', DashboardPage::class)->name('home');
 
     Route::resource('statuses', StatusController::class)->only(['index', 'create', 'edit']);
+    Route::resource('sources', SourceController::class)->only(['index', 'create', 'edit']);
 });
 
 

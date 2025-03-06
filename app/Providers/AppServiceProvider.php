@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\Repositories\StatusRepository;
-use App\Interfaces\StatusRepositoryInterface;
+use App\Http\Repositories\{StatusRepository, SourceRepository};
+use App\Interfaces\{StatusRepositoryInterface, SourceRepositoryInterface};
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(StatusRepositoryInterface::class, StatusRepository::class);
+        $this->app->bind(SourceRepositoryInterface::class, SourceRepository::class);
     }
 
     /**

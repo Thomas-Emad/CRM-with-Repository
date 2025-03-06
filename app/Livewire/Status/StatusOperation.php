@@ -4,13 +4,11 @@ namespace App\Livewire\Status;
 
 use Livewire\Component;
 use Livewire\Attributes\Title;
-use App\Livewire\Forms\StatusOperationsForm;
 use App\Interfaces\StatusRepositoryInterface;
 
 #[Title('Status Operation')]
 class StatusOperation extends Component
 {
-    public StatusOperationsForm $statusForm;
     public $id, $type, $name, $color;
 
     protected $statusRepository;

@@ -11,8 +11,6 @@ use App\Livewire\Forms\SourceOperationsForm;
 #[Title('Sources')]
 class SourcePage extends Component
 {
-    public SourceOperationsForm $sourceForm;
-
     use WithPagination;
 
     public $search = '';
@@ -33,7 +31,7 @@ class SourcePage extends Component
     public function delete()
     {
         $this->sourceForm->destroy();
-        $this->redirect(route('source.index'));
+        $this->redirect(route('sources.index'));
     }
 
     /**
